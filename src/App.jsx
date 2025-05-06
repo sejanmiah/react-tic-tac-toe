@@ -5,7 +5,7 @@ function Square({value,onSquareClick}) {
   return (
     <button
       onClick={onSquareClick}
-      className="bg-white border border-gray-400 h-12 w-12 m-1 leading-9 text-lg"
+      className="bg-white border border-gray-400 h-20 w-20 m-1 leading-9 font-bold text-[50px]"
     >
       {value}
     </button>
@@ -38,8 +38,8 @@ export default function Board() {
     setXIsNext(!xIsNext);
   }
   return (
-    <>
-    <div>{status}</div>
+    <div className="flex flex-col justify-center items-center gap-5 mt min-h-screen">
+    <div className="text-7xl font-bold">{status}</div>
       <div className="flex">
         <Square value={squares[0]} onSquareClick={()=>handleClick(0)} />
         <Square value={squares[1]} onSquareClick={()=>handleClick(1)}/>
@@ -57,7 +57,7 @@ export default function Board() {
         <Square value={squares[7]} onSquareClick={()=>handleClick(7)}/>
         <Square value={squares[8]} onSquareClick={()=>handleClick(8)}/>
       </div>
-    </>
+    </div>
   );
 }
 
